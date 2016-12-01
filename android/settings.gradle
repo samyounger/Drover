@@ -1,0 +1,3 @@
+rootProject.name = 'Drover'
+
+include ':app'

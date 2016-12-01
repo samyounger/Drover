@@ -40,6 +40,18 @@ var styles = React.StyleSheet.create({
     borderColor: "black",
     borderWidth: 2,
     textAlign: "center"
+  },
+  slider: {
+    alignSelf: "stretch",
+    lineHeight: 40,
+    marginLeft: 20,
+    textAlign: "left",
+  },
+  sliderLabel: {
+    marginLeft: -10
+  },
+  button: {
+    // backgroundColor: "green"
   }
 });
 

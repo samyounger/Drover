@@ -1,53 +1,42 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+'use strict';
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
-  View
+  TextInput,
+  View,
+  Navigator,
+  Image
 } from 'react-native';
 
-export default class Drover extends Component {
+var Style = require("./StyleSheet");
+
+class Drover extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style={Style.container}>
+        <Text style={Style.navBar}>Log in</Text>
+        <View style={Style.main}>
+          <Image
+            source={require("./Resources/logo.png")}
+            style={Style.logo}
+          />
+          <Text style={Style.formLabel}>E-mail</Text>
+          <TextInput style={Style.inputBox} placeholder="example@example.com"/>
+          <Text style={Style.formLabel}>Password</Text>
+          <TextInput style={Style.inputBox}/>
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('Drover', () => Drover);
+AppRegistry.registerComponent("Drover", () => Drover);

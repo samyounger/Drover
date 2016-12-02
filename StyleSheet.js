@@ -10,7 +10,26 @@ var styles = React.StyleSheet.create({
   // }
   container: {
       flex: 1,
-      backgroundColor: 'white'
+      backgroundColor: 'white',
+      alignItems: "center"
+  },
+  menu: {
+    paddingTop: 50
+  },
+  menuLogo: {
+
+  },
+  menuLineContainer: {
+    borderBottomColor: "lightgrey",
+    borderBottomWidth: 1,
+    marginBottom: 20,
+    marginRight: 10,
+    marginLeft: 10,
+    paddingBottom: 20,
+  },
+  menuLine: {
+    fontSize: 25,
+    fontWeight: "300",
   },
   toolbar: {
       backgroundColor: '#333',
@@ -34,7 +53,7 @@ var styles = React.StyleSheet.create({
   },
   logo: {
     alignItems: "center",
-    width: 150
+    // width: 150
   },
   formLabel: {
     alignSelf: "stretch",

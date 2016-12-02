@@ -50,8 +50,9 @@ var styles = React.StyleSheet.create({
   sliderLabel: {
     marginLeft: -10
   },
-  button: {
-    // backgroundColor: "green"
+  buttonStyle: {
+    fontSize: 20,
+    color: 'black',
   }
 });
 

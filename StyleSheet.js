@@ -3,10 +3,18 @@
 var React = require('react-native');
 
 var styles = React.StyleSheet.create({
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: "#ffffff",
+  //   alignItems: "center"
+  // }
   container: {
-    flex: 1,
-    backgroundColor: "#ffffff",
-    alignItems: "center"
+      flex: 1,
+      backgroundColor: 'white'
+  },
+  toolbar: {
+      backgroundColor: '#333',
+      height: 56,
   },
   navBar: {
     alignSelf: "stretch",

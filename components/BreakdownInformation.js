@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import styles from '../StyleSheet';
 
-class AnotherComponent extends Component {
+class BreakdownInformation extends Component {
   render(){
     return (
       <View style={styles.container}>
@@ -13,4 +13,4 @@ class AnotherComponent extends Component {
   }
 }
 
-module.exports = AnotherComponent;
+module.exports = BreakdownInformation;

@@ -1,7 +1,7 @@
 import React, { Platform } from 'react-native';
 import _ from 'underscore';
 
-import AnotherComponent from '../components/AnotherComponent';
+import BreakdownInformation from '../components/BreakdownInformation';
 import Home from '../components/Home';
 
 module.exports = function (scene) {
@@ -11,10 +11,10 @@ module.exports = function (scene) {
       name: 'Home',
       component: Home
     },
-    'AnotherComponent': {
-      title: 'AnotherComponent',
-      name: 'AnotherComponent',
-      component: AnotherComponent
+    'Breakdown information': {
+      title: 'Breakdown information',
+      name: 'Breakdown information',
+      component: BreakdownInformation
     }
   };
   var component = componentMap[scene];

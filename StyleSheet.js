@@ -58,9 +58,9 @@ var styles = React.StyleSheet.create({
   inputBox: {
     height: 50,
     margin: 10,
-    backgroundColor: "red",
-    borderColor: "black",
-    borderWidth: 2,
+    // backgroundColor: "red",
+    borderColor: "lightgrey",
+    borderWidth: 1,
     textAlign: "center"
   },
   slider: {

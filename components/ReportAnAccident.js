@@ -8,21 +8,38 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import SimplePicker from 'react-native-simple-picker';
 import styles from '../StyleSheet';
 
+const options = ['Yes', 'No'];
+const labels = ['Banana', 'Apple', 'Pear'];
+
 class ReportAnAccident extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      fault: 'Click here to select'
+    };
+  }
+
   render(){
     return (
       <ScrollView style={{
           marginTop: -65,
         }}>
         <View style={styles.main}>
+
+          <Text style={styles.paragraph}>Current Option: {this.state.selectedOption}</Text>
+
           <Text
             style={{
             fontSize: 20,
           textAlign: "center"}}>
           Enter the details of your accident below and we will send it off to your insurance company
           </Text>
+
           <Text style={styles.formLabel}>Your booking</Text>
           <TextInput style={styles.inputBox} />
 
@@ -38,7 +55,30 @@ class ReportAnAccident extends Component {
           <Text style={styles.formLabel}>Photos of damage(3 max.)</Text>
 
           <Text style={styles.formLabel}>Was it your fault?</Text>
-          <TextInput style={styles.inputBox} />
+          <Text
+            style={{
+              flex: 1,
+              alignSelf: "stretch",
+              margin: 10,
+              height: 50,
+              borderColor: "lightgrey",
+              borderWidth: 1,
+              textAlign: "center",
+              lineHeight: 50
+            }}
+            onPress={() => {
+              this.refs.picker.show();
+            }}>{this.state.fault}</Text>
+
+            <SimplePicker
+              ref={'picker'}
+              options={options}
+              onSubmit={(option) => {
+                this.setState({
+                  fault: option,
+                });
+              }}
+            />
 
           <Text style={styles.formLabel}>Is the car driveable?</Text>
           <TextInput style={styles.inputBox} />

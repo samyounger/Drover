@@ -25,6 +25,7 @@ class Home extends React.Component {
       password: "",
       trueSwitchIsOn: true,
       falseSwitchIsOn: false,
+      fault: "No"
     };
   }
 
@@ -57,6 +58,7 @@ class Home extends React.Component {
           </TouchableHighlight>
 
           <Text>Forgot your password?</Text>
+
         </View>
       </View>
     );

@@ -20,7 +20,9 @@ class ReportAnAccident extends Component {
     super(props);
 
     this.state = {
-      fault: 'Click here to select'
+      fault: "Click here to select",
+      carDriveable: "Click here to select",
+      injuries: "Click here to select"
     };
   }
 
@@ -67,11 +69,11 @@ class ReportAnAccident extends Component {
               lineHeight: 50
             }}
             onPress={() => {
-              this.refs.picker.show();
+              this.refs.picker1.show();
             }}>{this.state.fault}</Text>
 
             <SimplePicker
-              ref={'picker'}
+              ref={'picker1'}
               options={options}
               onSubmit={(option) => {
                 this.setState({
@@ -81,10 +83,56 @@ class ReportAnAccident extends Component {
             />
 
           <Text style={styles.formLabel}>Is the car driveable?</Text>
-          <TextInput style={styles.inputBox} />
+            <Text
+              style={{
+                flex: 1,
+                alignSelf: "stretch",
+                margin: 10,
+                height: 50,
+                borderColor: "lightgrey",
+                borderWidth: 1,
+                textAlign: "center",
+                lineHeight: 50
+              }}
+              onPress={() => {
+                this.refs.picker2.show();
+              }}>{this.state.carDriveable}</Text>
+
+              <SimplePicker
+                ref={'picker2'}
+                options={options}
+                onSubmit={(option) => {
+                  this.setState({
+                    carDriveable: option,
+                  });
+                }}
+              />
 
           <Text style={styles.formLabel}>Are there any personal injuries?</Text>
-          <TextInput style={styles.inputBox} />
+            <Text
+              style={{
+                flex: 1,
+                alignSelf: "stretch",
+                margin: 10,
+                height: 50,
+                borderColor: "lightgrey",
+                borderWidth: 1,
+                textAlign: "center",
+                lineHeight: 50
+              }}
+              onPress={() => {
+                this.refs.picker3.show();
+              }}>{this.state.injuries}</Text>
+
+              <SimplePicker
+                ref={'picker3'}
+                options={options}
+                onSubmit={(option) => {
+                  this.setState({
+                    injuries: option,
+                  });
+                }}
+              />
 
           <Text style={styles.formLabel}>Describe the incident</Text>
           <TextInput style={styles.inputBox} />

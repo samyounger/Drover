@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import {
   ListView,
   View,
-  Image
+  Image,
+  TouchableHighlight,
+  Text
 } from 'react-native';
-import Button from 'react-native-button';
 
 import Style from '../StyleSheet';
 
@@ -35,9 +36,13 @@ class Menu extends Component {
   _renderMenuItem(item) {
     return(
       <View style={Style.menuLineContainer}>
-        <Button
-          style={Style.menuLine}
-          onPress={()=> this._onItemSelect(item)}>{item}</Button>
+
+        <TouchableHighlight
+          underlayColor='#99d9f4'
+          onPress={()=> this._onItemSelect(item)}>
+          <Text style={Style.menuLine}>{item}</Text>
+        </TouchableHighlight>
+
       </View>
     );
   }

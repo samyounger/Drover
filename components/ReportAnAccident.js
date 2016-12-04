@@ -4,7 +4,8 @@ import {
   Text,
   TextInput,
   Image,
-  Animated
+  ScrollView,
+  TouchableHighlight
 } from 'react-native';
 
 import styles from '../StyleSheet';
@@ -12,7 +13,9 @@ import styles from '../StyleSheet';
 class ReportAnAccident extends Component {
   render(){
     return (
-      <View style={styles.container}>
+      <ScrollView style={{
+          marginTop: -65,
+        }}>
         <View style={styles.main}>
           <Text
             style={{
@@ -49,8 +52,14 @@ class ReportAnAccident extends Component {
           <Text style={styles.formLabel}>Details of third parties involved</Text>
           <TextInput style={styles.inputBox} />
 
+          <TouchableHighlight
+            style={styles.button}
+            underlayColor='#99d9f4'>
+            <Text style={styles.buttonText}>Report Accident</Text>
+          </TouchableHighlight>
+
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

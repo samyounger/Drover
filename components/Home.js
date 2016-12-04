@@ -5,11 +5,10 @@ import {
   Image,
   TextInput,
   Switch,
-  Animated
+  TouchableHighlight
 } from "react-native";
 
 import Drawer from 'react-native-drawer';
-import Button from 'react-native-button';
 
 import Style from '../StyleSheet';
 
@@ -49,19 +48,13 @@ class Home extends React.Component {
             Remember me
           </Text>
 
-          <Button
-            animated={true}
-            containerStyle={{
-              padding: 10,
-              margin: 10,
-              height:45,
-              alignSelf: "stretch",
-              overflow:'hidden',
-              borderRadius:4,
-              backgroundColor: 'green'}}
-            style={Style.buttonStyle}>
-            Log in
-          </Button>
+
+          <TouchableHighlight
+            style={Style.button}
+            underlayColor='#99d9f4'
+            onPress={onButtonPress()}>
+            <Text style={Style.buttonText}>Log in</Text>
+          </TouchableHighlight>
 
           <Text>Forgot your password?</Text>
         </View>

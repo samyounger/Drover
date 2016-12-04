@@ -9,9 +9,9 @@ var styles = React.StyleSheet.create({
   //   alignItems: "center"
   // }
   container: {
-      flex: 1,
-      backgroundColor: 'white',
-      alignItems: "center"
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: "center"
   },
   menu: {
     paddingTop: 50
@@ -30,10 +30,11 @@ var styles = React.StyleSheet.create({
   menuLine: {
     fontSize: 25,
     fontWeight: "300",
+    textAlign: "center"
   },
   toolbar: {
-      backgroundColor: '#333',
-      height: 56,
+    backgroundColor: '#333',
+    height: 56,
   },
   main: {
     marginTop: 65,
@@ -71,9 +72,23 @@ var styles = React.StyleSheet.create({
   sliderLabel: {
     marginLeft: -10
   },
-  buttonStyle: {
-    fontSize: 20,
-    color: 'black',
+  button: {
+    height: 36,
+    // flex: 1,
+    margin: 10,
+    flexDirection: 'row',
+    backgroundColor: '#48BBEC',
+    borderColor: '#48BBEC',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center'
   }
 });
 

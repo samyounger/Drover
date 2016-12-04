@@ -17,7 +17,7 @@ var styles = React.StyleSheet.create({
     paddingTop: 50
   },
   menuLogo: {
-
+    left: 80
   },
   menuLineContainer: {
     borderBottomColor: "lightgrey",
@@ -35,21 +35,15 @@ var styles = React.StyleSheet.create({
       backgroundColor: '#333',
       height: 56,
   },
-  navBar: {
-    alignSelf: "stretch",
-    backgroundColor: "#ffffff",
-    marginTop: 20,
-    textAlign: "center",
-    fontSize: 20,
-    height: 50,
-    lineHeight: 50
-  },
   main: {
+    marginTop: 65,
+    paddingLeft: 10,
+    paddingRight: 10,
     flex: 1,
     alignSelf: "stretch",
     alignItems: "center",
-    backgroundColor: "yellow"
-    // backgroundColor: "#f7f7f7"
+    // backgroundColor: "yellow",
+    backgroundColor: "#f7f7f7"
   },
   logo: {
     alignItems: "center",

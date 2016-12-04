@@ -31,7 +31,6 @@ class Home extends React.Component {
   render(){
     return (
       <View style={Style.container}>
-        <Text style={Style.navBar}>Log in</Text>
         <View style={Style.main}>
           <Image
           source={require("../Resources/logo.png")}

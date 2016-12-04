@@ -2,6 +2,7 @@ import React, { Platform } from 'react-native';
 import _ from 'underscore';
 
 import BreakdownInformation from '../components/BreakdownInformation';
+import ReportAnAccident from '../components/ReportAnAccident';
 import Home from '../components/Home';
 
 module.exports = function (scene) {
@@ -15,6 +16,11 @@ module.exports = function (scene) {
       title: 'Breakdown information',
       name: 'Breakdown information',
       component: BreakdownInformation
+    },
+    'Report an accident': {
+      title: 'Report an accident',
+      name: 'Report an accident',
+      component: ReportAnAccident
     }
   };
   var component = componentMap[scene];

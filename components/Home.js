@@ -4,7 +4,8 @@ import {
   Text,
   Image,
   TextInput,
-  Switch
+  Switch,
+  Animated
 } from "react-native";
 
 import Drawer from 'react-native-drawer';
@@ -49,6 +50,7 @@ class Home extends React.Component {
           </Text>
 
           <Button
+            animated={true}
             containerStyle={{
               padding: 10,
               margin: 10,

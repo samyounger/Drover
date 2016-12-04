@@ -12,7 +12,8 @@ import {
   Switch,
   ListView,
   StyleSheet,
-  DeviceEventEmitter
+  DeviceEventEmitter,
+  Animated
 } from 'react-native';
 
 import Drawer from 'react-native-drawer';

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  Image
+  Image,
+  Animated
 } from 'react-native';
 
 import styles from '../StyleSheet';

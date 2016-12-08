@@ -1,57 +1,45 @@
 import React, { Component } from 'react';
-
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReduxers, componse } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
-
 import {
   View,
   Text,
-  Image,
-  TextInput,
   Switch,
   TouchableHighlight
-} from "react-native";
+} from 'react-native';
 
-import Drawer from 'react-native-drawer';
-
+import Logo from './logo';
+import LoginForm from './loginForm';
 import Style from '../StyleSheet';
 
 const onButtonPress = () => {
-  console.log("Button pressed");
+  console.log('Button pressed');
 };
 
-class Home extends React.Component {
+class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
       trueSwitchIsOn: true,
       falseSwitchIsOn: false,
-      fault: "No"
+      fault: 'No'
     };
   }
 
-  render(){
+  render() {
+    const { container } = styles;
+
     return (
-      <View style={Style.container}>
-        <View style={Style.main}>
-          <Image
-          source={require("../Resources/logo.png")}
-          style={Style.logo}
-          />
-          <Text style={Style.formLabel}>E-mail</Text>
-          <TextInput style={Style.inputBox} placeholder="example@example.com"/>
-          <Text style={Style.formLabel}>Password</Text>
-          <TextInput style={Style.inputBox}/>
-
-
+        <View style={container}>
+          <Logo />
+          <LoginForm />
           <Text style={Style.slider}>
-            <Switch onValueChange={(value) => this.setState({trueSwitchIsOn: value})}
-            value={this.state.trueSwitchIsOn} style={Style.sliderLabel}/>
+            <Switch
+              onValueChange={(value) => this.setState({ trueSwitchIsOn: value })}
+              value={this.state.trueSwitchIsOn}
+              style={Style.sliderLabel}
+            />
             Remember me
           </Text>
 
@@ -59,16 +47,29 @@ class Home extends React.Component {
           <TouchableHighlight
             style={Style.button}
             underlayColor='#99d9f4'
-            onPress={onButtonPress()}>
+            onPress={onButtonPress()}
+          >
             <Text style={Style.buttonText}>Log in</Text>
           </TouchableHighlight>
 
           <Text>Forgot your password?</Text>
 
         </View>
-      </View>
     );
   }
 }
+
+const styles = {
+  container: {
+    marginTop: 65,
+    paddingLeft: 10,
+    paddingRight: 10,
+    flex: 1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    // backgroundColor: "yellow",
+    backgroundColor: '#f7f7f7'
+  }
+};
 
 module.exports = Home;

@@ -2,24 +2,13 @@
 
 import React, { Component } from 'react';
 import {
-  Text,
-  TextInput,
-  View,
-  Navigator,
   NavigatorIOS,
-  Image,
-  Switch,
-  ListView,
-  StyleSheet
 } from 'react-native';
 
 import Drawer from 'react-native-drawer';
-import Button from 'react-native-button';
 import Menu from './Menu';
 import Home from './Home';
 import navHelper from '../helpers/navigation';
-
-var Style = require("../StyleSheet");
 
 class Drover extends Component {
 

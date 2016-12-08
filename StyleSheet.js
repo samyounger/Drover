@@ -3,11 +3,6 @@
 var React = require('react-native');
 
 var styles = React.StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#ffffff",
-  //   alignItems: "center"
-  // }
   container: {
     flex: 1,
     backgroundColor: 'white',
@@ -35,33 +30,6 @@ var styles = React.StyleSheet.create({
   toolbar: {
     backgroundColor: '#333',
     height: 56,
-  },
-  main: {
-    marginTop: 65,
-    paddingLeft: 10,
-    paddingRight: 10,
-    flex: 1,
-    alignSelf: "stretch",
-    alignItems: "center",
-    // backgroundColor: "yellow",
-    backgroundColor: "#f7f7f7"
-  },
-  logo: {
-    alignItems: "center",
-    // width: 150
-  },
-  formLabel: {
-    alignSelf: "stretch",
-    textAlign: "left",
-    marginLeft: 10,
-  },
-  inputBox: {
-    height: 50,
-    margin: 10,
-    // backgroundColor: "red",
-    borderColor: "lightgrey",
-    borderWidth: 1,
-    textAlign: "center"
   },
   slider: {
     alignSelf: "stretch",

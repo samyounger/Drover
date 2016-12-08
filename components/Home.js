@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReduxers, componse } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
+
 import {
   View,
   Text,

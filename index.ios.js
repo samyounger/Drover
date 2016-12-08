@@ -3,4 +3,4 @@
 import React, { AppRegistry } from 'react-native';
 import Drover from './components/App';
 
-AppRegistry.registerComponent("Drover", () => Drover);
+AppRegistry.registerComponent('Drover', () => Drover);

@@ -1,4 +1,5 @@
-import React, { Platform } from 'react-native';
+import { Platform } from 'react-native';
+
 import _ from 'underscore';
 
 import BreakdownInformation from '../components/BreakdownInformation';
@@ -6,7 +7,8 @@ import ReportAnAccident from '../components/ReportAnAccident';
 import Home from '../components/Home';
 
 module.exports = function (scene) {
-  var componentMap = {
+  const componentMap = {
+
     'Home': {
       title: 'Home',
       name: 'Home',
@@ -23,7 +25,8 @@ module.exports = function (scene) {
       component: ReportAnAccident
     }
   };
-  var component = componentMap[scene];
-  var params = Platform.OS === 'ios' ? { passProps: scene.params } : scene.params;
+
+  const component = componentMap[scene];
+  const params = Platform.OS === 'ios' ? { passProps: scene.params } : scene.params;
   return _.extend(component, params);
 };

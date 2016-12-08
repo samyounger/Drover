@@ -7,9 +7,7 @@ import {
   Text
 } from 'react-native';
 
-import Style from '../StyleSheet';
-
-var _navigate;
+let navigate;
 
 class Menu extends Component {
 
@@ -20,7 +18,7 @@ class Menu extends Component {
         rowHasChanged: (row1, row2) => row1 !== row2
       })
     };
-    _navigate = this.props.navigate;
+    navigate = this.props.navigate;
   }
 
   componentDidMount() {
@@ -33,42 +31,64 @@ class Menu extends Component {
     });
   }
 
-  _renderMenuItem(item) {
-    return(
-      <View style={Style.menuLineContainer}>
+  onItemSelect(item) {
+    navigate(item);
+  }
 
+  renderMenuItem(item) {
+    const { menuLineContainer, menuLine } = styles;
+
+    return (
+      <View style={menuLineContainer}>
         <TouchableHighlight
           underlayColor='#99d9f4'
-          onPress={()=> this._onItemSelect(item)}>
-          <Text style={Style.menuLine}>{item}</Text>
+          onPress={() => this.onItemSelect(item)}
+        >
+          <Text style={menuLine}>{item}</Text>
         </TouchableHighlight>
-
       </View>
     );
   }
 
-  _onItemSelect(item) {
-    _navigate(item);
-  }
-
   render() {
+    const { menu, menuLogo } = styles;
     return (
-      <View style={Style.menu}>
+      <View style={menu}>
         <Image
-          source={require("../Resources/logo.png")}
-          style={Style.menuLogo}
-          />
+          source={require('../Resources/logo.png')}
+          style={menuLogo}
+        />
         <ListView
-          style={Style.menu}
+          style={menu}
           dataSource={this.state.dataSource}
           renderRow={(item) =>
-            this._renderMenuItem(item)}
-            />
+            this.renderMenuItem(item)}
+        />
         </View>
       );
     }
-
-
   }
+
+  const styles = {
+    menu: {
+      paddingTop: 50
+    },
+    menuLogo: {
+      left: 80
+    },
+    menuLineContainer: {
+      borderBottomColor: 'lightgrey',
+      borderBottomWidth: 1,
+      marginBottom: 20,
+      marginRight: 10,
+      marginLeft: 10,
+      paddingBottom: 20,
+    },
+    menuLine: {
+      fontSize: 25,
+      fontWeight: '300',
+      textAlign: 'center'
+    },
+  };
 
   module.exports = Menu;

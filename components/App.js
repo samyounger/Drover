@@ -1,9 +1,5 @@
-'use strict';
-
 import React, { Component } from 'react';
-import {
-  NavigatorIOS,
-} from 'react-native';
+import { NavigatorIOS } from 'react-native';
 
 import Drawer from 'react-native-drawer';
 import Menu from './Menu';
@@ -12,38 +8,43 @@ import navHelper from '../helpers/navigation';
 
 class Drover extends Component {
 
-  _navigate(route) {
-    this._navigator.push(navHelper(route));
-    this._drawer.close();
+  navigate(route) {
+    this.navigator.push(navHelper(route));
+    this.drawer.close();
   }
 
   render() {
     return (
       <Drawer
-        ref={(ref) => this._drawer = ref}
+        ref={(ref) => this.drawer = ref}
         type="overlay"
-        content={<Menu navigate={(route) => { this._navigate(route);} }/>}
+        content={
+          <Menu navigate={(route) => { this.navigate(route); }} />
+        }
         tapToClose={true}
         openDrawerOffset={0.2}
         panCloseMask={0.2}
         closedDrawerOffset={-3}
         styles={{
-          drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
-          main: {paddingLeft: 3}
+          drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3 },
+          main: { paddingLeft: 3 }
         }}
         tweenHandler={(ratio) => ({
-          main: { opacity:(2-ratio)/2 }
-        })}>
+          main: { opacity: (2 - ratio) / 2 }
+        })}
+      >
         <NavigatorIOS
-          ref={(ref) => this._navigator = ref}
-          style={{flex: 1}}
+          ref={(ref) => this.navigator = ref}
+          style={{ flex: 1 }}
           initialRoute={{
             title: 'Log in',
             component: Home,
             leftButtonIcon: require('../Resources/menu.png'),
-            onLeftButtonPress: () => { this._drawer.open();
+            onLeftButtonPress: () => {
+              this.drawer.open();
             }
-          }} />
+          }}
+        />
         </Drawer>
       );
     }

@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import {
-  View,
   Text,
   TextInput,
-  Image,
   ScrollView,
   TouchableHighlight
 } from 'react-native';
 
 import SimplePicker from 'react-native-simple-picker';
-import styles from '../StyleSheet';
 
 const options = ['Yes', 'No'];
-const labels = ['Banana', 'Apple', 'Pear'];
 
 class ReportAnAccident extends Component {
 
@@ -20,57 +16,56 @@ class ReportAnAccident extends Component {
     super(props);
 
     this.state = {
-      fault: "Click here to select",
-      carDriveable: "Click here to select",
-      injuries: "Click here to select"
+      fault: 'Click here to select',
+      carDriveable: 'Click here to select',
+      injuries: 'Click here to select'
     };
   }
 
-  render(){
+  render() {
+    const { container, formLabel, button, buttonText, inputBox } = styles;
     return (
-      <ScrollView style={{
-          marginTop: -65,
-        }}>
-        <View style={styles.main}>
-
-          <Text style={styles.paragraph}>Current Option: {this.state.selectedOption}</Text>
+      <ScrollView style={container} >
+          <Text>Current Option: {this.state.selectedOption}</Text>
 
           <Text
             style={{
             fontSize: 20,
-          textAlign: "center"}}>
+            textAlign: 'center' }}
+          >
           Enter the details of your accident below and we will send it off to your insurance company
           </Text>
 
-          <Text style={styles.formLabel}>Your booking</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Your booking</Text>
+          <TextInput style={inputBox} />
 
-          <Text style={styles.formLabel}>Location of incident</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Location of incident</Text>
+          <TextInput style={inputBox} />
 
-          <Text style={styles.formLabel}>Date of incident</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Date of incident</Text>
+          <TextInput style={inputBox} />
 
-          <Text style={styles.formLabel}>Time of incident(24hrs)</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Time of incident(24hrs)</Text>
+          <TextInput style={inputBox} />
 
-          <Text style={styles.formLabel}>Photos of damage(3 max.)</Text>
+          <Text style={formLabel}>Photos of damage(3 max.)</Text>
 
-          <Text style={styles.formLabel}>Was it your fault?</Text>
+          <Text style={formLabel}>Was it your fault?</Text>
           <Text
             style={{
               flex: 1,
-              alignSelf: "stretch",
+              alignSelf: 'stretch',
               margin: 10,
               height: 50,
-              borderColor: "lightgrey",
+              borderColor: 'lightgrey',
               borderWidth: 1,
-              textAlign: "center",
+              textAlign: 'center',
               lineHeight: 50
             }}
             onPress={() => {
               this.refs.picker1.show();
-            }}>{this.state.fault}</Text>
+            }}
+          >{this.state.fault}</Text>
 
             <SimplePicker
               ref={'picker1'}
@@ -82,21 +77,22 @@ class ReportAnAccident extends Component {
               }}
             />
 
-          <Text style={styles.formLabel}>Is the car driveable?</Text>
+          <Text style={formLabel}>Is the car driveable?</Text>
             <Text
               style={{
                 flex: 1,
-                alignSelf: "stretch",
+                alignSelf: 'stretch',
                 margin: 10,
                 height: 50,
-                borderColor: "lightgrey",
+                borderColor: 'lightgrey',
                 borderWidth: 1,
-                textAlign: "center",
+                textAlign: 'center',
                 lineHeight: 50
               }}
               onPress={() => {
                 this.refs.picker2.show();
-              }}>{this.state.carDriveable}</Text>
+              }}
+            >{this.state.carDriveable}</Text>
 
               <SimplePicker
                 ref={'picker2'}
@@ -108,21 +104,21 @@ class ReportAnAccident extends Component {
                 }}
               />
 
-          <Text style={styles.formLabel}>Are there any personal injuries?</Text>
+          <Text style={formLabel}>Are there any personal injuries?</Text>
             <Text
               style={{
                 flex: 1,
-                alignSelf: "stretch",
+                alignSelf: 'stretch',
                 margin: 10,
                 height: 50,
-                borderColor: "lightgrey",
+                borderColor: 'lightgrey',
                 borderWidth: 1,
-                textAlign: "center",
+                textAlign: 'center',
                 lineHeight: 50
               }}
-              onPress={() => {
-                this.refs.picker3.show();
-              }}>{this.state.injuries}</Text>
+              onPress={() => { this.refs.picker3.show(); }}
+            >
+              {this.state.injuries}</Text>
 
               <SimplePicker
                 ref={'picker3'}
@@ -134,22 +130,61 @@ class ReportAnAccident extends Component {
                 }}
               />
 
-          <Text style={styles.formLabel}>Describe the incident</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Describe the incident</Text>
+          <TextInput style={inputBox} />
 
-          <Text style={styles.formLabel}>Details of third parties involved</Text>
-          <TextInput style={styles.inputBox} />
+          <Text style={formLabel}>Details of third parties involved</Text>
+          <TextInput style={inputBox} />
 
           <TouchableHighlight
-            style={styles.button}
-            underlayColor='#99d9f4'>
-            <Text style={styles.buttonText}>Report Accident</Text>
+            style={button}
+            underlayColor='#99d9f4'
+          >
+            <Text style={buttonText}>Report Accident</Text>
           </TouchableHighlight>
 
-        </View>
       </ScrollView>
     );
   }
 }
+
+const styles = {
+  container: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#f7f7f7'
+  },
+  inputBox: {
+    height: 50,
+    margin: 10,
+    borderColor: 'lightgrey',
+    borderWidth: 1,
+    textAlign: 'center'
+  },
+  formLabel: {
+    alignSelf: 'stretch',
+    textAlign: 'left',
+    marginLeft: 10,
+  },
+  button: {
+    height: 36,
+    margin: 10,
+    flexDirection: 'row',
+    backgroundColor: '#48BBEC',
+    borderColor: '#48BBEC',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center'
+  }
+};
 
 module.exports = ReportAnAccident;

@@ -5,57 +5,84 @@ import {
   Image
 } from 'react-native';
 
-import styles from '../StyleSheet';
+const Statements = {
+  questionOne: 'What happens in the event of a breakdown?',
+  oneAnswer: 'If your vehicle requires a recovery service, please call the following number to have the vehicle moved our premises:',
+  questionTwo: '24 hour AA hotline',
+  twoAnswer: '020 3808 7637',
+  questionThree: 'Quote policy number:',
+  threeAnswer: 'KX392J93',
+  questionFour: 'Have the recovery move the vehicle to:',
+  fourAnswer: '422 Kingsland Road, London, E8 4AA'
+};
 
 class BreakdownInformation extends Component {
-  render(){
+  render() {
+    const { container } = styles;
     return (
-      <View style={styles.container}>
-        <View style={styles.main}>
+      <View style={container}>
+        <Text
+          style={{ fontWeight: 'bold',
+          fontSize: 20,
+          textAlign: 'center' }}
+        >
+        {Statements.questionOne}
+        </Text>
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center' }}
+        >{Statements.oneAnswer}</Text>
+        <View
+          style={{
+            backgroundColor: 'white',
+            alignSelf: 'stretch',
+            padding: 10,
+            marginTop: 10,
+            marginBottom: 10,
+            alignItems: 'center' }}
+        >
+          <Text>{Statements.questionTwo}</Text>
           <Text
-            style={{fontWeight: "bold",
-            fontSize: 20,
-          textAlign: "center"}}>
-          What happens in the event of a breakdown?
-          </Text>
-          <Text style={{
-              fontSize: 18,
-              textAlign: "center"
-            }}>If your vehicle requires a recovery service, please call the following number to have the vehicle moved our premises:</Text>
-          <View style={{
-              backgroundColor: "white",
-              alignSelf: "stretch",
-              padding: 10,
-              marginTop: 10,
-              marginBottom: 10,
-              alignItems: "center"
-            }}>
-            <Text>24 hour AA hotline</Text>
-            <Text style={{
-                fontSize: 35
-              }}>020 3808 7637</Text>
-            <Text>Quote policy number:</Text>
-            <Text style={{
-                fontSize: 35
-              }}>KX392J93</Text>
-          </View>
-          <Text style={{
-              fontSize: 18,
-              textAlign: "center"
-            }}>Have the recovery move the vehicle to: 422 Kingsland Road, London, E8 4AA</Text>
-          <View style={{
-              padding: 10
-            }}>
-            <Image source={require("../Resources/map.png")}
+            style={{
+              fontSize: 35
+            }}
+          >{Statements.twoAnswer}</Text>
+          <Text>{Statements.questionThree}</Text>
+          <Text
+            style={{
+              fontSize: 35
+            }}
+          >{Statements.threeAnswer}</Text>
+        </View>
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center'
+          }}
+        >{Statements.questionFour} {Statements.fourAnswer}</Text>
+        <Image
+          source={require('../Resources/map.png')}
           style={{
             width: 330,
             height: 200
-          }}/>
-          </View>
-        </View>
+          }}
+        />
       </View>
     );
   }
 }
+
+const styles = {
+  container: {
+    marginTop: 65,
+    paddingLeft: 10,
+    paddingRight: 10,
+    flex: 1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    backgroundColor: '#f7f7f7'
+  }
+};
 
 module.exports = BreakdownInformation;

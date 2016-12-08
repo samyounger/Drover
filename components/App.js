@@ -40,14 +40,12 @@ class Drover extends Component {
             title: 'Log in',
             component: Home,
             leftButtonIcon: require('../Resources/menu.png'),
-            onLeftButtonPress: () => {
-              this.drawer.open();
-            }
+            onLeftButtonPress: () => { this.drawer.open(); }
           }}
         />
-        </Drawer>
-      );
-    }
+      </Drawer>
+    );
   }
+}
 
   module.exports = Drover;

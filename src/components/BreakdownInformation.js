@@ -62,7 +62,7 @@ class BreakdownInformation extends Component {
           }}
         >{Statements.questionFour} {Statements.fourAnswer}</Text>
         <Image
-          source={require('../Resources/map.png')}
+          source={require('../../Resources/map.png')}
           style={{
             width: 330,
             height: 200

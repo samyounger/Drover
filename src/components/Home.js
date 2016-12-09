@@ -4,10 +4,10 @@ import {
   Text,
 } from 'react-native';
 
-import Logo from './Logo';
+import Logo from './common/Logo';
 import LoginForm from './LoginForm';
-import SlideButton from './switch';
-import Button from './Button';
+import SlideButton from './common/switch';
+import Button from './common/Button';
 
 class Home extends Component {
   render() {

@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { AppRegistry } from 'react-native';
-import Drover from './components/App';
+import { AppRegistry } from 'react-native';
+import Drover from './src/components/App';
 
 AppRegistry.registerComponent('Drover', () => Drover);

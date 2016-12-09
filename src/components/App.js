@@ -39,7 +39,7 @@ class Drover extends Component {
           initialRoute={{
             title: 'Log in',
             component: Home,
-            leftButtonIcon: require('../Resources/menu.png'),
+            leftButtonIcon: require('../../Resources/menu.png'),
             onLeftButtonPress: () => { this.drawer.open(); }
           }}
         />

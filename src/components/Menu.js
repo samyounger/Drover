@@ -55,7 +55,7 @@ class Menu extends Component {
     return (
       <View style={menu}>
         <Image
-          source={require('../Resources/logo.png')}
+          source={require('../../Resources/logo.png')}
           style={menuLogo}
         />
         <ListView

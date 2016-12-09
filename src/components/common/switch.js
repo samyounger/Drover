@@ -1,41 +1,33 @@
-import React, { Component } from 'react';
-import { Text, Switch } from 'react-native';
+import React from 'react';
+import { View, Text, Switch } from 'react-native';
 
-class SlideButton extends Component {
+const SlideButton = ({ label, rememberUserName }) => {
+  function changeSwitch() {
+    if (rememberUserName) {
+      return { rememberUserName: false };
+    }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      trueSwitchIsOn: true,
-      falseSwitchIsOn: false,
-    };
+    return { rememberUserName };
   }
 
-  render() {
-    const { slider, sliderLabel } = styles;
-
-    return (
-      <Text style={slider}>
+  return (
+    <View style={styles.container}>
       <Switch
-      onValueChange={(value) => this.setState({ trueSwitchIsOn: value })}
-      value={this.state.trueSwitchIsOn}
-      style={sliderLabel}
+        onValueChange={changeSwitch}
       />
-      Remember me
-      </Text>
-    );
-  }
-}
+    <Text style={styles.switchLabel}>{label}</Text>
+    </View>
+  );
+};
 
 const styles = {
-  slider: {
-    alignSelf: 'stretch',
-    lineHeight: 40,
-    marginLeft: 20,
-    textAlign: 'left',
+  container: {
+    flexDirection: 'row',
+    alignSelf: 'stretch'
   },
-  sliderLabel: {
-    marginLeft: -10
+  switchLabel: {
+    marginLeft: 10,
+    lineHeight: 30
   }
 };
 

@@ -7,6 +7,15 @@ import {
 import { Logo, SlideButton, Button, Input } from './common';
 
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      rememberUserName: null,
+      secureText: false
+    };
+  }
+
   render() {
     const { container } = styles;
 
@@ -17,13 +26,18 @@ class Home extends Component {
           <Input
             placeholder='example@email.com'
             label='E-mail'
+            autoCorrect={false}
           />
           <Input
             placeholder='password'
             label='Password'
+            secureTextEntry
           />
 
-          <SlideButton />
+          <SlideButton
+            label='Remember me'
+            rememberUserName={this.state.rememberUserName}
+          />
 
           <Button />
 

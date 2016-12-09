@@ -4,15 +4,15 @@ import _ from 'underscore';
 
 import BreakdownInformation from '../components/BreakdownInformation';
 import ReportAnAccident from '../components/ReportAnAccident';
-import Home from '../components/Home';
+import Login from '../components/Login';
 
 module.exports = function (scene) {
   const componentMap = {
 
-    'Home': {
-      title: 'Home',
-      name: 'Home',
-      component: Home
+    'Login': {
+      title: 'Login',
+      name: 'Login',
+      component: Login
     },
     'Breakdown information': {
       title: 'Breakdown information',

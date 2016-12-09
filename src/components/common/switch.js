@@ -40,4 +40,4 @@ const styles = {
 };
 
 
-export default SlideButton;
+export { SlideButton };

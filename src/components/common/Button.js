@@ -22,13 +22,13 @@ const Button = () => {
 const styles = {
   button: {
     height: 36,
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 10,
     flexDirection: 'row',
     backgroundColor: '#48BBEC',
     borderColor: '#48BBEC',
     borderWidth: 1,
     borderRadius: 8,
-    marginBottom: 10,
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
@@ -39,4 +39,4 @@ const styles = {
   }
 };
 
-export default Button;
+export { Button };

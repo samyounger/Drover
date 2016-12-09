@@ -23,4 +23,4 @@ const styles = {
   }
 };
 
-export default Logo;
+export { Logo };

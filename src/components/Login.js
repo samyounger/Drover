@@ -4,10 +4,7 @@ import {
   Text,
 } from 'react-native';
 
-import Logo from './common/Logo';
-import LoginForm from './LoginForm';
-import SlideButton from './common/switch';
-import Button from './common/Button';
+import { Logo, SlideButton, Button, Input } from './common';
 
 class Home extends Component {
   render() {
@@ -16,9 +13,20 @@ class Home extends Component {
     return (
         <View style={container}>
           <Logo />
-          <LoginForm />
+
+          <Input
+            placeholder='example@email.com'
+            label='E-mail'
+          />
+          <Input
+            placeholder='password'
+            label='Password'
+          />
+
           <SlideButton />
+
           <Button />
+
           <Text>Forgot your password?</Text>
         </View>
     );
@@ -28,8 +36,7 @@ class Home extends Component {
 const styles = {
   container: {
     marginTop: 65,
-    paddingLeft: 10,
-    paddingRight: 10,
+    padding: 10,
     flex: 1,
     alignSelf: 'stretch',
     alignItems: 'center',

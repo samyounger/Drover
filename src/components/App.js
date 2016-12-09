@@ -3,7 +3,7 @@ import { NavigatorIOS } from 'react-native';
 
 import Drawer from 'react-native-drawer';
 import Menu from './Menu';
-import Home from './Home';
+import Login from './Login';
 import navHelper from '../helpers/navigation';
 
 class Drover extends Component {
@@ -38,7 +38,7 @@ class Drover extends Component {
           style={{ flex: 1 }}
           initialRoute={{
             title: 'Log in',
-            component: Home,
+            component: Login,
             leftButtonIcon: require('../../Resources/menu.png'),
             onLeftButtonPress: () => { this.drawer.open(); }
           }}

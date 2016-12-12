@@ -1,18 +1,14 @@
 import React from 'react';
 import { TouchableHighlight, Text } from 'react-native';
 
-function onButtonPress() {
-  console.log('Button pressed');
-}
-
-const Button = () => {
+const Button = ({ onPress }) => {
   const { button, buttonText } = styles;
 
   return (
     <TouchableHighlight
       style={button}
       underlayColor='#99d9f4'
-      onPress={onButtonPress}
+      onPress={onPress}
     >
       <Text style={buttonText}>Log in</Text>
     </TouchableHighlight>
